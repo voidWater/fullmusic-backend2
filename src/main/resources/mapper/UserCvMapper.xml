@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fullmusic.dao.UserCvMapper" >
+  <resultMap id="BaseResultMap" type="com.fullmusic.pojo.UserCv" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="vc_user_id" property="vcUserId" jdbcType="VARCHAR" />
+    <result column="vc_student_name" property="vcStudentName" jdbcType="VARCHAR" />
+    <result column="vc_student_age" property="vcStudentAge" jdbcType="INTEGER" />
+    <result column="vc_student_phone" property="vcStudentPhone" jdbcType="VARCHAR" />
+    <result column="vc_learing_time" property="vcLearingTime" jdbcType="INTEGER" />
+    <result column="vc_have_piano" property="vcHavePiano" jdbcType="INTEGER" />
+    <result column="vc_alias_name" property="vcAliasName" jdbcType="VARCHAR" />
+    <result column="vc_remark" property="vcRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, vc_user_id, vc_student_name, vc_student_age, vc_student_phone, vc_learing_time, 
+    vc_have_piano, vc_alias_name, vc_remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fullmusic.pojo.UserCvExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from vt_user_cv
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from vt_user_cv
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from vt_user_cv
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.fullmusic.pojo.UserCvExample" >
+    delete from vt_user_cv
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.fullmusic.pojo.UserCv" >
+    insert into vt_user_cv (id, vc_user_id, vc_student_name, 
+      vc_student_age, vc_student_phone, vc_learing_time, 
+      vc_have_piano, vc_alias_name, vc_remark
+      )
+    values (#{id,jdbcType=VARCHAR}, #{vcUserId,jdbcType=VARCHAR}, #{vcStudentName,jdbcType=VARCHAR}, 
+      #{vcStudentAge,jdbcType=INTEGER}, #{vcStudentPhone,jdbcType=VARCHAR}, #{vcLearingTime,jdbcType=INTEGER}, 
+      #{vcHavePiano,jdbcType=INTEGER}, #{vcAliasName,jdbcType=VARCHAR}, #{vcRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.fullmusic.pojo.UserCv" >
+    insert into vt_user_cv
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="vcUserId != null" >
+        vc_user_id,
+      </if>
+      <if test="vcStudentName != null" >
+        vc_student_name,
+      </if>
+      <if test="vcStudentAge != null" >
+        vc_student_age,
+      </if>
+      <if test="vcStudentPhone != null" >
+        vc_student_phone,
+      </if>
+      <if test="vcLearingTime != null" >
+        vc_learing_time,
+      </if>
+      <if test="vcHavePiano != null" >
+        vc_have_piano,
+      </if>
+      <if test="vcAliasName != null" >
+        vc_alias_name,
+      </if>
+      <if test="vcRemark != null" >
+        vc_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="vcUserId != null" >
+        #{vcUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="vcStudentName != null" >
+        #{vcStudentName,jdbcType=VARCHAR},
+      </if>
+      <if test="vcStudentAge != null" >
+        #{vcStudentAge,jdbcType=INTEGER},
+      </if>
+      <if test="vcStudentPhone != null" >
+        #{vcStudentPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="vcLearingTime != null" >
+        #{vcLearingTime,jdbcType=INTEGER},
+      </if>
+      <if test="vcHavePiano != null" >
+        #{vcHavePiano,jdbcType=INTEGER},
+      </if>
+      <if test="vcAliasName != null" >
+        #{vcAliasName,jdbcType=VARCHAR},
+      </if>
+      <if test="vcRemark != null" >
+        #{vcRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fullmusic.pojo.UserCvExample" resultType="java.lang.Integer" >
+    select count(*) from vt_user_cv
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update vt_user_cv
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vcUserId != null" >
+        vc_user_id = #{record.vcUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vcStudentName != null" >
+        vc_student_name = #{record.vcStudentName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vcStudentAge != null" >
+        vc_student_age = #{record.vcStudentAge,jdbcType=INTEGER},
+      </if>
+      <if test="record.vcStudentPhone != null" >
+        vc_student_phone = #{record.vcStudentPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vcLearingTime != null" >
+        vc_learing_time = #{record.vcLearingTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.vcHavePiano != null" >
+        vc_have_piano = #{record.vcHavePiano,jdbcType=INTEGER},
+      </if>
+      <if test="record.vcAliasName != null" >
+        vc_alias_name = #{record.vcAliasName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vcRemark != null" >
+        vc_remark = #{record.vcRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update vt_user_cv
+    set id = #{record.id,jdbcType=VARCHAR},
+      vc_user_id = #{record.vcUserId,jdbcType=VARCHAR},
+      vc_student_name = #{record.vcStudentName,jdbcType=VARCHAR},
+      vc_student_age = #{record.vcStudentAge,jdbcType=INTEGER},
+      vc_student_phone = #{record.vcStudentPhone,jdbcType=VARCHAR},
+      vc_learing_time = #{record.vcLearingTime,jdbcType=INTEGER},
+      vc_have_piano = #{record.vcHavePiano,jdbcType=INTEGER},
+      vc_alias_name = #{record.vcAliasName,jdbcType=VARCHAR},
+      vc_remark = #{record.vcRemark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fullmusic.pojo.UserCv" >
+    update vt_user_cv
+    <set >
+      <if test="vcUserId != null" >
+        vc_user_id = #{vcUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="vcStudentName != null" >
+        vc_student_name = #{vcStudentName,jdbcType=VARCHAR},
+      </if>
+      <if test="vcStudentAge != null" >
+        vc_student_age = #{vcStudentAge,jdbcType=INTEGER},
+      </if>
+      <if test="vcStudentPhone != null" >
+        vc_student_phone = #{vcStudentPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="vcLearingTime != null" >
+        vc_learing_time = #{vcLearingTime,jdbcType=INTEGER},
+      </if>
+      <if test="vcHavePiano != null" >
+        vc_have_piano = #{vcHavePiano,jdbcType=INTEGER},
+      </if>
+      <if test="vcAliasName != null" >
+        vc_alias_name = #{vcAliasName,jdbcType=VARCHAR},
+      </if>
+      <if test="vcRemark != null" >
+        vc_remark = #{vcRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fullmusic.pojo.UserCv" >
+    update vt_user_cv
+    set vc_user_id = #{vcUserId,jdbcType=VARCHAR},
+      vc_student_name = #{vcStudentName,jdbcType=VARCHAR},
+      vc_student_age = #{vcStudentAge,jdbcType=INTEGER},
+      vc_student_phone = #{vcStudentPhone,jdbcType=VARCHAR},
+      vc_learing_time = #{vcLearingTime,jdbcType=INTEGER},
+      vc_have_piano = #{vcHavePiano,jdbcType=INTEGER},
+      vc_alias_name = #{vcAliasName,jdbcType=VARCHAR},
+      vc_remark = #{vcRemark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

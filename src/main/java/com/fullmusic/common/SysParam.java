@@ -4,6 +4,34 @@ package com.fullmusic.common;
  * Created by Administrator on 2019/6/9 0009.
  */
 public interface SysParam {
+
+    public enum SysCommon {
+        ERROR(-1, "操作失败"), SUCCESS(0, "操作成功");
+
+        SysCommon(int code, String msg) {
+            this.code = code;
+            this.msg = msg;
+        }
+
+        private int code;
+        private String msg;
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getMsg() {
+            return msg;
+        }
+
+        public void setMsg(String msg) {
+            this.msg = msg;
+        }
+    }
     /**
      * 注册
      */
@@ -132,9 +160,40 @@ public interface SysParam {
      * 用户
      */
     public enum User {
-        TYPE_TEACHER(1, "老师"), TYPE_STUDENT(2, "学生");
+        TYPE_TEACHER(1, "老师"), TYPE_STUDENT(2, "学生"),NOT_EXIST(3,"用户不存在");
 
         User(int code, String msg) {
+            this.code = code;
+            this.msg = msg;
+        }
+
+        private int code;
+        private String msg;
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getMsg() {
+            return msg;
+        }
+
+        public void setMsg(String msg) {
+            this.msg = msg;
+        }
+    }
+
+    /**
+     * 选课
+     */
+    public enum XK {
+        FIRST(1, "第一次使用"),NOT_FIRST(2, "非第一次使用"),;
+
+        XK(int code, String msg) {
             this.code = code;
             this.msg = msg;
         }
