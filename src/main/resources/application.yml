@@ -1,11 +1,11 @@
 sys:
   uploadPath: /root/attach/
 server:
-#  port: 444
-#  ssl:
-#      key-store: classpath:fullmusic.club.jks
-#      key-password: 159753
-#      key-store-type: JKS
+  port: 444
+  ssl:
+      key-store: classpath:fullmusic.club.jks
+      key-password: 159753
+      key-store-type: JKS
 spring:
   http:
     encoding:

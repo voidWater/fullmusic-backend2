@@ -1,9 +1,8 @@
-package main.java.com.fullmusic.dao;
+package com.fullmusic.dao;
 
 import java.util.List;
-
-import main.java.com.fullmusic.pojo.CurriculaVariable;
-import main.java.com.fullmusic.pojo.CurriculaVariableExample;
+import com.fullmusic.pojo.CurriculaVariable;
+import com.fullmusic.pojo.CurriculaVariableExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface CurriculaVariableMapper {

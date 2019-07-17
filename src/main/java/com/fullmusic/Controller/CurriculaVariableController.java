@@ -43,8 +43,9 @@ public class CurriculaVariableController {
      * 完善信息
      * @return
      */
-    public ResponseResult complementInfo(){
-        return null;
+    public ResponseResult complementInfo(String userId,String studentName,String age,String phone,String lTime,String hPiano){
+
+        return xKService.complementInfo( userId, studentName, age, phone, lTime, hPiano);
     }
     /**
      * 获取教师列表
@@ -58,29 +59,73 @@ public class CurriculaVariableController {
      * 获取教师课程表
      * @return
      */
-    public ResponseResult getScheduleByTeacher(){
-        return null;
+    public ResponseResult getScheduleByTeacher(String teacherId){
+
+        return xKService.getScheduleByTeacher(teacherId);
     }
     /**
      * 获取教师上课记录
      * @return
      */
     @RequestMapping("/getClassRecordByTeacher")
-    public ResponseResult getClassRecordByTeacher(){
-        return null;
+    public ResponseResult getClassRecordByTeacher(String teacherId){
+
+        return xKService.getClassRecordByTeacher(teacherId);
     }
     /**
      * 获取学生课程表
      * @return
      */
-    public ResponseResult getScheduleByStudent(){
-        return null;
+    public ResponseResult getScheduleByStudent(String studentId){
+
+        return xKService.getScheduleByStudent(studentId);
     }
     /**
      * 获取学生上课记录
      * @return
      */
-    public ResponseResult getClassRecordByStudent(){
-        return null;
+    public ResponseResult getClassRecordByStudent(String studentId){
+
+        return xKService.getClassRecordByStudent(studentId);
     }
+    /**
+     * 获取当天老师已被的选课程
+     * @param teacherId
+     * @param date
+     * @return
+     */
+    public ResponseResult getCurrXk(String teacherId,String date){
+
+        return xKService.getCurrXk( teacherId, date);
+    }
+
+    /**
+     * 获取可约课时间
+     * @return
+     */
+    public ResponseResult getDateList(){
+        return xKService.getDateList();
+    }
+
+    /**
+     * 选课
+     * @param teacherId
+     * @param studentId
+     * @param course
+     * @param date
+     * @param orderByCourse
+     * @return
+     */
+    public ResponseResult xk(String teacherId,String studentId,String course,String date,String orderByCourse){
+        return xKService.xk(teacherId,studentId,course,date,orderByCourse);
+    }
+    /**
+     * 取消选课
+     * @param id
+     * @return
+     */
+    public ResponseResult canelXk(String id){
+        return xKService.canelXk(id);
+    }
+
 }

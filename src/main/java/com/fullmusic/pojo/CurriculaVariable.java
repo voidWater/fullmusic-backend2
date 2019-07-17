@@ -1,4 +1,6 @@
-package main.java.com.fullmusic.pojo;
+package com.fullmusic.pojo;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
@@ -21,10 +23,12 @@ public class CurriculaVariable {
 
     private Integer vcSuccess;
 
+    private Integer vcOrder;
+
     private Integer vcDuration;
-
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date vcBegindate;
-
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date vcEnddate;
 
     private Date vcCreatedate;
@@ -103,6 +107,14 @@ public class CurriculaVariable {
 
     public void setVcSuccess(Integer vcSuccess) {
         this.vcSuccess = vcSuccess;
+    }
+
+    public Integer getVcOrder() {
+        return vcOrder;
+    }
+
+    public void setVcOrder(Integer vcOrder) {
+        this.vcOrder = vcOrder;
     }
 
     public Integer getVcDuration() {

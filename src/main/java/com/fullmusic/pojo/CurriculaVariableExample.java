@@ -1,4 +1,4 @@
-package main.java.com.fullmusic.pojo;
+package com.fullmusic.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -702,6 +702,66 @@ public class CurriculaVariableExample {
 
         public Criteria andVcSuccessNotBetween(Integer value1, Integer value2) {
             addCriterion("vc_success not between", value1, value2, "vcSuccess");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderIsNull() {
+            addCriterion("vc_order is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderIsNotNull() {
+            addCriterion("vc_order is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderEqualTo(Integer value) {
+            addCriterion("vc_order =", value, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderNotEqualTo(Integer value) {
+            addCriterion("vc_order <>", value, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderGreaterThan(Integer value) {
+            addCriterion("vc_order >", value, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderGreaterThanOrEqualTo(Integer value) {
+            addCriterion("vc_order >=", value, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderLessThan(Integer value) {
+            addCriterion("vc_order <", value, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderLessThanOrEqualTo(Integer value) {
+            addCriterion("vc_order <=", value, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderIn(List<Integer> values) {
+            addCriterion("vc_order in", values, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderNotIn(List<Integer> values) {
+            addCriterion("vc_order not in", values, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderBetween(Integer value1, Integer value2) {
+            addCriterion("vc_order between", value1, value2, "vcOrder");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcOrderNotBetween(Integer value1, Integer value2) {
+            addCriterion("vc_order not between", value1, value2, "vcOrder");
             return (Criteria) this;
         }
 
