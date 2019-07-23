@@ -43,6 +43,7 @@ public class CurriculaVariableController {
      * 完善信息
      * @return
      */
+    @RequestMapping("/complementInfo")
     public ResponseResult complementInfo(String userId,String studentName,String age,String phone,String lTime,String hPiano){
 
         return xKService.complementInfo( userId, studentName, age, phone, lTime, hPiano);
@@ -51,7 +52,7 @@ public class CurriculaVariableController {
      * 获取教师列表
      * @return
      */
-    @RequestMapping("/isFirst")
+    @RequestMapping("/getTeacher")
     public ResponseResult getTeacher(){
         return xKService.getTeacher();
     }

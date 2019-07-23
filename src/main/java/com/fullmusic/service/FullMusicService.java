@@ -39,10 +39,10 @@ public class FullMusicService {
      * @param userId
      * @return
      */
-    public User userLoginIn(String userId, String password) {
+    public User userLoginIn(String userId,String name, String password) {
         User user = new User();
         user.setId(userId);
-        user.setVcName("none");
+        user.setVcName(name);
         if (password.equals("XYLloveMe")) {
             user.setVcType(SysParam.User.TYPE_TEACHER.getCode());
         } else {

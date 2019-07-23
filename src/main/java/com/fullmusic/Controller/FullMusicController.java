@@ -81,12 +81,12 @@ public class FullMusicController {
      * @throws IOException
      */
     @RequestMapping("loginIn")
-    public ResponseResult loginIn(String userId, String password, HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public ResponseResult loginIn(String userId, String name,String password, HttpSession session, HttpServletRequest request, HttpServletResponse response) throws IOException {
         if (userId == null || password == null) {
             return ResponseResult.createMsg(SysParam.LoginIn.ERROR.getCode(), SysParam.LoginIn.ERROR.getMsg());
         }
         if (password.equals("iLoveYouXYL") || password.equals("XYLloveMe")) {
-            User user = fullMusicService.userLoginIn(userId, password);
+            User user = fullMusicService.userLoginIn(userId, name,password);
             if (user != null) {
                 session.setAttribute("user", user);
                 return ResponseResult.createMsg(SysParam.LoginIn.SUCCESS.getCode(), SysParam.LoginIn.SUCCESS.getMsg());
