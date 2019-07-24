@@ -454,52 +454,62 @@ public class UserCvExample {
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeEqualTo(Integer value) {
+        public Criteria andVcLearingTimeEqualTo(String value) {
             addCriterion("vc_learing_time =", value, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeNotEqualTo(Integer value) {
+        public Criteria andVcLearingTimeNotEqualTo(String value) {
             addCriterion("vc_learing_time <>", value, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeGreaterThan(Integer value) {
+        public Criteria andVcLearingTimeGreaterThan(String value) {
             addCriterion("vc_learing_time >", value, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andVcLearingTimeGreaterThanOrEqualTo(String value) {
             addCriterion("vc_learing_time >=", value, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeLessThan(Integer value) {
+        public Criteria andVcLearingTimeLessThan(String value) {
             addCriterion("vc_learing_time <", value, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andVcLearingTimeLessThanOrEqualTo(String value) {
             addCriterion("vc_learing_time <=", value, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeIn(List<Integer> values) {
+        public Criteria andVcLearingTimeLike(String value) {
+            addCriterion("vc_learing_time like", value, "vcLearingTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcLearingTimeNotLike(String value) {
+            addCriterion("vc_learing_time not like", value, "vcLearingTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcLearingTimeIn(List<String> values) {
             addCriterion("vc_learing_time in", values, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeNotIn(List<Integer> values) {
+        public Criteria andVcLearingTimeNotIn(List<String> values) {
             addCriterion("vc_learing_time not in", values, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeBetween(Integer value1, Integer value2) {
+        public Criteria andVcLearingTimeBetween(String value1, String value2) {
             addCriterion("vc_learing_time between", value1, value2, "vcLearingTime");
             return (Criteria) this;
         }
 
-        public Criteria andVcLearingTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andVcLearingTimeNotBetween(String value1, String value2) {
             addCriterion("vc_learing_time not between", value1, value2, "vcLearingTime");
             return (Criteria) this;
         }
@@ -514,52 +524,62 @@ public class UserCvExample {
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoEqualTo(Integer value) {
+        public Criteria andVcHavePianoEqualTo(String value) {
             addCriterion("vc_have_piano =", value, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoNotEqualTo(Integer value) {
+        public Criteria andVcHavePianoNotEqualTo(String value) {
             addCriterion("vc_have_piano <>", value, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoGreaterThan(Integer value) {
+        public Criteria andVcHavePianoGreaterThan(String value) {
             addCriterion("vc_have_piano >", value, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoGreaterThanOrEqualTo(Integer value) {
+        public Criteria andVcHavePianoGreaterThanOrEqualTo(String value) {
             addCriterion("vc_have_piano >=", value, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoLessThan(Integer value) {
+        public Criteria andVcHavePianoLessThan(String value) {
             addCriterion("vc_have_piano <", value, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoLessThanOrEqualTo(Integer value) {
+        public Criteria andVcHavePianoLessThanOrEqualTo(String value) {
             addCriterion("vc_have_piano <=", value, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoIn(List<Integer> values) {
+        public Criteria andVcHavePianoLike(String value) {
+            addCriterion("vc_have_piano like", value, "vcHavePiano");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcHavePianoNotLike(String value) {
+            addCriterion("vc_have_piano not like", value, "vcHavePiano");
+            return (Criteria) this;
+        }
+
+        public Criteria andVcHavePianoIn(List<String> values) {
             addCriterion("vc_have_piano in", values, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoNotIn(List<Integer> values) {
+        public Criteria andVcHavePianoNotIn(List<String> values) {
             addCriterion("vc_have_piano not in", values, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoBetween(Integer value1, Integer value2) {
+        public Criteria andVcHavePianoBetween(String value1, String value2) {
             addCriterion("vc_have_piano between", value1, value2, "vcHavePiano");
             return (Criteria) this;
         }
 
-        public Criteria andVcHavePianoNotBetween(Integer value1, Integer value2) {
+        public Criteria andVcHavePianoNotBetween(String value1, String value2) {
             addCriterion("vc_have_piano not between", value1, value2, "vcHavePiano");
             return (Criteria) this;
         }

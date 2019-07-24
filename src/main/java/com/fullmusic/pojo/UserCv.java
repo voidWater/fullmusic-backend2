@@ -11,9 +11,9 @@ public class UserCv {
 
     private String vcStudentPhone;
 
-    private Integer vcLearingTime;
+    private String vcLearingTime;
 
-    private Integer vcHavePiano;
+    private String vcHavePiano;
 
     private String vcAliasName;
 
@@ -59,20 +59,20 @@ public class UserCv {
         this.vcStudentPhone = vcStudentPhone == null ? null : vcStudentPhone.trim();
     }
 
-    public Integer getVcLearingTime() {
+    public String getVcLearingTime() {
         return vcLearingTime;
     }
 
-    public void setVcLearingTime(Integer vcLearingTime) {
-        this.vcLearingTime = vcLearingTime;
+    public void setVcLearingTime(String vcLearingTime) {
+        this.vcLearingTime = vcLearingTime == null ? null : vcLearingTime.trim();
     }
 
-    public Integer getVcHavePiano() {
+    public String getVcHavePiano() {
         return vcHavePiano;
     }
 
-    public void setVcHavePiano(Integer vcHavePiano) {
-        this.vcHavePiano = vcHavePiano;
+    public void setVcHavePiano(String vcHavePiano) {
+        this.vcHavePiano = vcHavePiano == null ? null : vcHavePiano.trim();
     }
 
     public String getVcAliasName() {

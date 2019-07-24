@@ -7,8 +7,8 @@
     <result column="vc_student_name" property="vcStudentName" jdbcType="VARCHAR" />
     <result column="vc_student_age" property="vcStudentAge" jdbcType="INTEGER" />
     <result column="vc_student_phone" property="vcStudentPhone" jdbcType="VARCHAR" />
-    <result column="vc_learing_time" property="vcLearingTime" jdbcType="INTEGER" />
-    <result column="vc_have_piano" property="vcHavePiano" jdbcType="INTEGER" />
+    <result column="vc_learing_time" property="vcLearingTime" jdbcType="VARCHAR" />
+    <result column="vc_have_piano" property="vcHavePiano" jdbcType="VARCHAR" />
     <result column="vc_alias_name" property="vcAliasName" jdbcType="VARCHAR" />
     <result column="vc_remark" property="vcRemark" jdbcType="VARCHAR" />
   </resultMap>
@@ -110,8 +110,8 @@
       vc_have_piano, vc_alias_name, vc_remark
       )
     values (#{id,jdbcType=VARCHAR}, #{vcUserId,jdbcType=VARCHAR}, #{vcStudentName,jdbcType=VARCHAR}, 
-      #{vcStudentAge,jdbcType=INTEGER}, #{vcStudentPhone,jdbcType=VARCHAR}, #{vcLearingTime,jdbcType=INTEGER}, 
-      #{vcHavePiano,jdbcType=INTEGER}, #{vcAliasName,jdbcType=VARCHAR}, #{vcRemark,jdbcType=VARCHAR}
+      #{vcStudentAge,jdbcType=INTEGER}, #{vcStudentPhone,jdbcType=VARCHAR}, #{vcLearingTime,jdbcType=VARCHAR}, 
+      #{vcHavePiano,jdbcType=VARCHAR}, #{vcAliasName,jdbcType=VARCHAR}, #{vcRemark,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.fullmusic.pojo.UserCv" >
@@ -162,10 +162,10 @@
         #{vcStudentPhone,jdbcType=VARCHAR},
       </if>
       <if test="vcLearingTime != null" >
-        #{vcLearingTime,jdbcType=INTEGER},
+        #{vcLearingTime,jdbcType=VARCHAR},
       </if>
       <if test="vcHavePiano != null" >
-        #{vcHavePiano,jdbcType=INTEGER},
+        #{vcHavePiano,jdbcType=VARCHAR},
       </if>
       <if test="vcAliasName != null" >
         #{vcAliasName,jdbcType=VARCHAR},
@@ -200,10 +200,10 @@
         vc_student_phone = #{record.vcStudentPhone,jdbcType=VARCHAR},
       </if>
       <if test="record.vcLearingTime != null" >
-        vc_learing_time = #{record.vcLearingTime,jdbcType=INTEGER},
+        vc_learing_time = #{record.vcLearingTime,jdbcType=VARCHAR},
       </if>
       <if test="record.vcHavePiano != null" >
-        vc_have_piano = #{record.vcHavePiano,jdbcType=INTEGER},
+        vc_have_piano = #{record.vcHavePiano,jdbcType=VARCHAR},
       </if>
       <if test="record.vcAliasName != null" >
         vc_alias_name = #{record.vcAliasName,jdbcType=VARCHAR},
@@ -223,8 +223,8 @@
       vc_student_name = #{record.vcStudentName,jdbcType=VARCHAR},
       vc_student_age = #{record.vcStudentAge,jdbcType=INTEGER},
       vc_student_phone = #{record.vcStudentPhone,jdbcType=VARCHAR},
-      vc_learing_time = #{record.vcLearingTime,jdbcType=INTEGER},
-      vc_have_piano = #{record.vcHavePiano,jdbcType=INTEGER},
+      vc_learing_time = #{record.vcLearingTime,jdbcType=VARCHAR},
+      vc_have_piano = #{record.vcHavePiano,jdbcType=VARCHAR},
       vc_alias_name = #{record.vcAliasName,jdbcType=VARCHAR},
       vc_remark = #{record.vcRemark,jdbcType=VARCHAR}
     <if test="_parameter != null" >
@@ -247,10 +247,10 @@
         vc_student_phone = #{vcStudentPhone,jdbcType=VARCHAR},
       </if>
       <if test="vcLearingTime != null" >
-        vc_learing_time = #{vcLearingTime,jdbcType=INTEGER},
+        vc_learing_time = #{vcLearingTime,jdbcType=VARCHAR},
       </if>
       <if test="vcHavePiano != null" >
-        vc_have_piano = #{vcHavePiano,jdbcType=INTEGER},
+        vc_have_piano = #{vcHavePiano,jdbcType=VARCHAR},
       </if>
       <if test="vcAliasName != null" >
         vc_alias_name = #{vcAliasName,jdbcType=VARCHAR},
@@ -267,8 +267,8 @@
       vc_student_name = #{vcStudentName,jdbcType=VARCHAR},
       vc_student_age = #{vcStudentAge,jdbcType=INTEGER},
       vc_student_phone = #{vcStudentPhone,jdbcType=VARCHAR},
-      vc_learing_time = #{vcLearingTime,jdbcType=INTEGER},
-      vc_have_piano = #{vcHavePiano,jdbcType=INTEGER},
+      vc_learing_time = #{vcLearingTime,jdbcType=VARCHAR},
+      vc_have_piano = #{vcHavePiano,jdbcType=VARCHAR},
       vc_alias_name = #{vcAliasName,jdbcType=VARCHAR},
       vc_remark = #{vcRemark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}

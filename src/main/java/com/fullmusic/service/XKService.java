@@ -79,7 +79,8 @@ public class XKService {
         userCv.setVcStudentName(studentName);
         userCv.setVcStudentAge(Integer.valueOf(age));
         userCv.setVcStudentPhone(phone);
-        userCv.setVcLearingTime(Integer.valueOf(lTime));
+        userCv.setVcLearingTime(lTime);
+        userCv.setVcHavePiano(hPiano);
         int i = userCvMapper.insert(userCv);
         if(i==1){
             return ResponseResult.createMsg(SysParam.SysCommon.SUCCESS.getCode(),SysParam.SysCommon.SUCCESS.getMsg());
