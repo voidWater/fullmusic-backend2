@@ -60,6 +60,7 @@ public class CurriculaVariableController {
      * 获取教师课程表
      * @return
      */
+    @RequestMapping("/getScheduleByTeacher")
     public ResponseResult getScheduleByTeacher(String teacherId){
 
         return xKService.getScheduleByTeacher(teacherId);
@@ -77,6 +78,7 @@ public class CurriculaVariableController {
      * 获取学生课程表
      * @return
      */
+    @RequestMapping("/getScheduleByStudent")
     public ResponseResult getScheduleByStudent(String studentId){
 
         return xKService.getScheduleByStudent(studentId);
@@ -85,6 +87,7 @@ public class CurriculaVariableController {
      * 获取学生上课记录
      * @return
      */
+    @RequestMapping("/getClassRecordByStudent")
     public ResponseResult getClassRecordByStudent(String studentId){
 
         return xKService.getClassRecordByStudent(studentId);
@@ -95,6 +98,7 @@ public class CurriculaVariableController {
      * @param date
      * @return
      */
+    @RequestMapping("/getCurrXk")
     public ResponseResult getCurrXk(String teacherId,String date){
 
         return xKService.getCurrXk( teacherId, date);
@@ -104,6 +108,7 @@ public class CurriculaVariableController {
      * 获取可约课时间
      * @return
      */
+    @RequestMapping("/getDateList")
     public ResponseResult getDateList(){
         return xKService.getDateList();
     }
@@ -117,6 +122,7 @@ public class CurriculaVariableController {
      * @param orderByCourse
      * @return
      */
+    @RequestMapping("/xk")
     public ResponseResult xk(String teacherId,String studentId,String course,String date,String orderByCourse){
         return xKService.xk(teacherId,studentId,course,date,orderByCourse);
     }
@@ -125,6 +131,7 @@ public class CurriculaVariableController {
      * @param id
      * @return
      */
+    @RequestMapping("/canelXk")
     public ResponseResult canelXk(String id){
         return xKService.canelXk(id);
     }

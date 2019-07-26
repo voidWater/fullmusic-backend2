@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -163,9 +164,12 @@ public class XKService {
      * @return
      */
     public ResponseResult getDateList(){
-        String crrd = DateFormat.getDateInstance().format(new Date());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String crrd = formatter.format(new Date());
+        System.out.println(crrd);
+        System.out.println(DateUtil.getAssDate(crrd));
         String xq = DateUtil.getWeekOfDate(DateUtil.getAssDate(crrd));
-
+        System.out.println(xq);
         List<String> list = new ArrayList<>();
         list.add(crrd+","+xq);
         int i = 0;
